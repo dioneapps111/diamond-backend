@@ -17,9 +17,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/pur_sale", require("./routes/purchaseEntry"));
-app.use("/auth", require("./routes/auth"));
-app.use("/user", require("./routes/users"));
-app.use("/category", require("./routes/category"));
+app.use("/auth", require("./routes/Auth"));
+// app.use("/user", require("./routes/users"));
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

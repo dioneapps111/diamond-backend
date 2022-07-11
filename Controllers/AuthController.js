@@ -91,15 +91,12 @@ exports.protectGlobal = async function (req, res, next) {
   try {
     let user = "Dione";
     let password = "Dione&169";
-
-    // console.log(code1);
     let token = req.headers.data_authorization;
     if (!token) {
       throw new Error("Please send token");
     }
 
     let tokenData = await jwt.verify(token, "diamonDione");
-
 
     if (user != tokenData.user) {
       throw new Error("User Not Found");
