@@ -15,11 +15,11 @@ exports.lotEntry = async function (req, res, next) {
         //     certificate_no: req.body.certificate_no,
         //     Remarks: req.body.Remarks,
         // };
-        let data = req.body;
-        let addData = await item_master.create(data);
+        // let data = req.body;
+        let addData = await item_master.create(req.body);
         res.status(200).json({
             status: "200",
-            addData: data,
+            addData,
         });
     } catch (err) {
         res.status(200).json({
