@@ -12,8 +12,8 @@ const userSchema = mongoose.Schema({
   delete: { type: Number, default: "" },
   edit: { type: Number, default: "" },
   a_Status: { type: Number, default: "" },
-  c_id: { type: Number, default: "" },
-  m_c_id: { type: Number, default: "" },
+  Branch_id: { type: Number, default: "" },
+  master_country_id: { type: Number, default: "" },
 });
 
 module.exports = mongoose.model("User", userSchema);

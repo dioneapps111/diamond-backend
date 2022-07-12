@@ -13,11 +13,11 @@ const paymentSchema = mongoose.Schema({
     amount: { type: Number, default: "" },
     description: { type: String, default: "" },
     status: { type: Number, default: "" },
-    c_date: { type: Date, default: "" },
-    c_time: { type: Date, default: "" },
-    u_id: { type: Number, default: "" },
-    c_id: { type: Number, default: "" },
-    m_c_id: { type: Number, default: "" },
+    current_date: { type: Date, default: "" },
+    current_time: { type: Date, default: "" },
+    user_id: { type: Number, default: "" },
+    Branch_id: { type: Number, default: "" },
+    master_country_id: { type: Number, default: "" },
 });
 
 module.exports = mongoose.model("Payment", paymentSchema);

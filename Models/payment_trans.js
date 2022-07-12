@@ -14,11 +14,11 @@ const payment_transSchema = mongoose.Schema({
     rate: { type: Number, default: "" },
     amount: { type: Number, default: "" },
     status: { type: Number, default: "" },
-    c_date: { type: Date, default: "" },
-    c_time: { type: Date, default: "" },
-    u_id: { type: Number, default: "" },
-    c_id: { type: Number, default: "" },
-    m_c_id: { type: Number, default: "" },
+    current_date: { type: Date, default: "" },
+    current_time: { type: Date, default: "" },
+    user_id: { type: Number, default: "" },
+    Branch_id: { type: Number, default: "" },
+    master_country_id: { type: Number, default: "" },
 });
 
 module.exports = mongoose.model("Payment_trans", payment_transSchema);

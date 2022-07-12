@@ -41,13 +41,13 @@ const partyMasterSchema = mongoose.Schema({
     opening_bal: { type: Number, default: "" },
     debit_credit: { type: String, default: "" },
     remark: { type: String, default: "" },
-    c_date: { type: Date, default: "" },
-    c_time: { type: Date, default: "" },
+    current_date: { type: Date, default: "" },
+    current_time: { type: Date, default: "" },
     u_date: { type: Date, default: "" },
     u_time: { type: Date, default: "" },
     user_id: { type: Number, default: "" },
-    c_id: { type: Number, default: "" },
-    m_c_id: { type: Number, default: "" },
+    Branch_id: { type: Number, default: "" },
+    master_country_id: { type: Number, default: "" },
     party_code: { type: String, default: "" },
 });
 

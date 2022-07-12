@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const stock_transSchema = mongoose.Schema({
-    Type: { type: String, default: "" },
+const Item_masterSchema = mongoose.Schema({
+    Type: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
     refno: { type: String, default: "" },
-    Color: { type: String, default: "" },
-    Clarity: { type: String, default: "" },
-    Shape: { type: String, default: "" },
-    Size: { type: String, default: "" },
+    Color: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
+    Clarity: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
+    Shape: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
+    Size: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
     lotno: { type: String, default: "" },
     kapan: { type: String, default: "" },
     asking_rate: { type: Number, default: "" },
@@ -40,11 +40,11 @@ const stock_transSchema = mongoose.Schema({
     pav_dp: { type: String, default: "" },
     str_ln: { type: String, default: "" },
     lr_half: { type: String, default: "" },
-    c_date: { type: Date, default: "" },
-    c_time: { type: Date, default: "" },
-    u_id: { type: Number, default: "" },
-    c_id: { type: Number, default: "" },
-    m_c_id: { type: Number, default: "" },
+    current_date: { type: Date, default: "" },
+    current_time: { type: Date, default: "" },
+    user_id: { type: Number, default: "" },
+    Branch_id: { type: Number, default: "" },
+    master_country_id: { type: Number, default: "" },
 });
 
-module.exports = mongoose.model("Stock_trans", stock_transSchema);
+module.exports = mongoose.model("Item_master", Item_masterSchema);
