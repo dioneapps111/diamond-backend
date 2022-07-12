@@ -9,9 +9,9 @@ const Item_masterSchema = mongoose.Schema({
     Size: { type: mongoose.Schema.Types.ObjectId, ref: 'Type' },
     lotno: { type: String, default: "" },
     kapan: { type: String, default: "" },
-    asking_rate: { type: Number, default: "" },
-    cost: { type: Number, default: "" },
-    stock_value: { type: Number, default: "" },
+    asking_rate: { type: String, default: "" },
+    cost: { type: String, default: "" },
+    stock_value: { type: String, default: "" },
     Remarks: { type: String, default: "" },
     responsibility: { type: String, default: "" },
     pair: { type: String, default: "" },
@@ -42,9 +42,9 @@ const Item_masterSchema = mongoose.Schema({
     lr_half: { type: String, default: "" },
     current_date: { type: Date, default: "" },
     current_time: { type: Date, default: "" },
-    user_id: { type: Number, default: "" },
-    Branch_id: { type: Number, default: "" },
-    master_country_id: { type: Number, default: "" },
+    user_id: { type: String, default: "" },
+    Branch_id: { type: String, default: "" },
+    master_country_id: { type: String, default: "" },
 });
 
 module.exports = mongoose.model("Item_master", Item_masterSchema);

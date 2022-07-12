@@ -40,7 +40,7 @@ exports.pur_saleEntry = async function (req, res, next) {
 exports.get_pur_saleEntry = async function (req, res, next) {
     try {
         // let data = req.body;
-        let Data = await pur_sale.find({ inv_no: req.body });
+        let Data = await pur_sale.find();
         res.status(200).json({
             status: "200",
             data: Data[0],

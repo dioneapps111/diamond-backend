@@ -8,12 +8,12 @@ const userSchema = mongoose.Schema({
   user_sec_question: { type: String, default: "" },
   user_sec_answer: { type: String, default: "" },
   user_status: { type: String, default: "" },
-  add: { type: Number, default: "" },
-  delete: { type: Number, default: "" },
-  edit: { type: Number, default: "" },
-  a_Status: { type: Number, default: "" },
-  Branch_id: { type: Number, default: "" },
-  master_country_id: { type: Number, default: "" },
+  add: { type: String, default: "" },
+  delete: { type: String, default: "" },
+  edit: { type: String, default: "" },
+  a_Status: { type: String, default: "" },
+  Branch_id: { type: String, default: "" },
+  master_country_id: { type: String, default: "" },
 });
 
 module.exports = mongoose.model("User", userSchema);

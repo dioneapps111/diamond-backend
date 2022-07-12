@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 const app = express();
 
-mongoose.connect('',
+mongoose.connect('mongodb+srv://dione_apps:Dione&169@cluster0.5yxff.mongodb.net/diamond?retryWrites=true&w=majority',
   { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log("DB connected established"))
   .catch(err => console.log("DB connection error: ", err));

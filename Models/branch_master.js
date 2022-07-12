@@ -5,9 +5,9 @@ const branchMasterSchema = mongoose.Schema({
     branch_name: { type: String, default: "" },
     party: { type: String, default: "" },
     currency: { type: String, default: "" },
-    rate: { type: Number, default: "" },
-    status: { type: Number, default: "" },
-    master_country_id: { type: Number, default: "" },
+    rate: { type: String, default: "" },
+    status: { type: String, default: "" },
+    master_country_id: { type: String, default: "" },
 });
 
 module.exports = mongoose.model("BranchMaster", branchMasterSchema);
