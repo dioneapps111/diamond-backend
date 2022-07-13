@@ -5,7 +5,7 @@ const Type = require("../Models/Type");
 function removeDubeliment(arr) {
     let duplicateIds = Object.values(
         arr.reduce(
-            (acc, cur) => Object.assign(acc, { [cur.user.toString()]: cur }),
+            (acc, cur) => Object.assign(acc, { [cur.type]: cur }),
             {}
         )
     );
@@ -71,10 +71,19 @@ exports.updatepurchase = async function (req, res, next) {
 
 exports.gettypes = async function (req, res, next) {
     try {
-        let addData = await Type.find()
+        let addData = await Type.find();
+        addData = removeDubeliment(addData);
+        let Primery_arry = {};
+        for (let index = 0; index < addData.length; index++) {
+            let type = addData[index].type;
+            let Secendory_arry = await Type.find({"type" : type });
+            console.log(type);
+            Primery_arry[type] = Secendory_arry;
+        }
+        Primery_arry = [Primery_arry];
         res.status(200).json({
             status: "200",
-            addData,
+            Primery_arry,
         });
     } catch (err) {
         res.status(200).json({
