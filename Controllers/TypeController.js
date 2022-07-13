@@ -2,6 +2,16 @@ var User = require("../Models/pur_sale");
 const mongoose = require("mongoose");
 const Type = require("../Models/Type");
 
+function removeDubeliment(arr) {
+    let duplicateIds = Object.values(
+        arr.reduce(
+            (acc, cur) => Object.assign(acc, { [cur.user.toString()]: cur }),
+            {}
+        )
+    );
+    return duplicateIds;
+}
+
 exports.TypeEntry = async function (req, res, next) {
     try {
         let data = {
@@ -32,7 +42,6 @@ exports.TypeEntry = async function (req, res, next) {
     }
 };
 
-
 exports.updatepurchase = async function (req, res, next) {
     try {
         let newdata = await User.findByIdAndUpdate(req.body.userId,
@@ -59,3 +68,18 @@ exports.updatepurchase = async function (req, res, next) {
         });
     }
 };
+
+exports.gettypes = async function (req, res, next) {
+    try {
+        let addData = await Type.find()
+        res.status(200).json({
+            status: "200",
+            addData,
+        });
+    } catch (err) {
+        res.status(200).json({
+            status: "500",
+            message: err.message,
+        });
+    }
+}
