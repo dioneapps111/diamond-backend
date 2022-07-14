@@ -18,6 +18,7 @@ app.use(cors());
 
 app.use("/pur_sale", require("./routes/pur_saleEntry"));
 app.use("/types", require("./routes/Item"));
+app.use("/", require("./routes/index"));
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
