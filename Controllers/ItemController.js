@@ -28,3 +28,19 @@ exports.lotEntry = async function (req, res, next) {
         });
     }
 };
+
+exports.getlots = async function (req, res, next) {
+    try {
+        let addData = await item_master.find()
+            .select("lotno")
+        res.status(200).json({
+            status: "200",
+            addData,
+        });
+    } catch (err) {
+        res.status(200).json({
+            status: "500",
+            message: err.message,
+        });
+    }
+}
