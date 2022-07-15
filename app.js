@@ -14,8 +14,9 @@ app.use(morgan("dev"));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
-
+app.use(cors({
+  origin: '*'
+}))
 app.use("/pur_sale", require("./routes/pur_saleEntry"));
 app.use("/types", require("./routes/Item"));
 app.use("/", require("./routes/index"));
